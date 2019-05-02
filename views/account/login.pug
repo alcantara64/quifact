@@ -1,0 +1,138 @@
+doctype html
+head
+  // Google Tag Manager
+  script.
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PDTWJ3Z');
+  // End Google Tag Manager
+  title QUIFACT - Invoice discounting platform
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  meta(charset='UTF-8')
+  // External CSS libraries
+  link(type='text/css' rel='stylesheet' href='assets/css/bootstrap.min.css')
+  link(type='text/css' rel='stylesheet' href='assets/css/magnific-popup.css')
+  link(type='text/css' rel='stylesheet' href='assets/css/jquery.selectBox.css')
+  link(type='text/css' rel='stylesheet' href='assets/css/dropzone.css')
+  link(type='text/css' rel='stylesheet' href='assets/css/rangeslider.css')
+  link(type='text/css' rel='stylesheet' href='assets/css/animate.min.css')
+  link(type='text/css' rel='stylesheet' href='assets/css/leaflet.css')
+  link(type='text/css' rel='stylesheet' href='assets/css/slick.css')
+  link(type='text/css' rel='stylesheet' href='assets/css/slick-theme.css')
+  link(type='text/css' rel='stylesheet' href='assets/css/slick-theme.css')
+  link(type='text/css' rel='stylesheet' href='assets/css/map.css')
+  link(type='text/css' rel='stylesheet' href='assets/css/jquery.mCustomScrollbar.css')
+  link(type='text/css' rel='stylesheet' href='assets/fonts/font-awesome/css/font-awesome.min.css')
+  link(type='text/css' rel='stylesheet' href='assets/fonts/flaticon/font/flaticon.css')
+  // Favicon icon
+  link(rel='shortcut icon' href='assets/img/favicon.ico' type='image/x-icon')
+  // Google fonts
+  link(rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800%7CPoppins:400,500,700,800,900%7CRoboto:100,300,400,400i,500,700')
+  // Custom Stylesheet
+  link(type='text/css' rel='stylesheet' href='assets/css/style.css')
+  link#style_sheet(rel='stylesheet' type='text/css' href='assets/css/skins/default.css')
+// Google Tag Manager (noscript)
+noscript
+  iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-PDTWJ3Z' height='0' width='0' style='display:none;visibility:hidden')
+// End Google Tag Manager (noscript)
+// main header start
+header#main-header-2.main-header.sticky-header
+  .container
+    .row
+      .col-12
+        nav.navbar.navbar-expand-lg.navbar-light.rounded
+          a.navbar-brand.logo.navbar-brand.d-flex.mr-auto(href='index.html')
+            img(src='assets/img/logos/black-logo.png' alt='logo')
+          button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbar' aria-controls='navbar' aria-expanded='false' aria-label='Toggle navigation')
+            span.fa.fa-bars
+          #navbar.navbar-collapse.collapse.w-100
+            ul.navbar-nav.ml-auto
+              li.nav-item.dropdown.active
+                a#navbarDropdownMenuLink.nav-link(href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                  | Home
+              li.nav-item.dropdown.megamenu-li
+                a#dropdown01.nav-link(href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false') About
+              li.nav-item.dropdown
+                a#navbarDropdownMenuLink5.nav-link(href='#' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                  | Blog
+              li.nav-item.dropdown
+                a#navbarDropdown4.nav-link(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                  | FAQ
+              li.nav-item.dropdown
+                a#navbarDropdown3.nav-link(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+                  | Contact
+              li.nav-item.dropdown
+                a.btn.btn-sm.btn-white-sm-outline.btn-round.signup-link(href='/login') Login
+                a.btn.btn-sm.btn-theme.btn-round.signup-link(href='/signup') Signup
+// main header end
+.page_loader
+include ../partials/flash
+
+// Login page start
+.login-page
+  .container-fluid
+    .row
+      .col-xl-8.col-lg-8.col-md-7.overview-bgi.cnt-bg-photo.cnt-bg-photo-2.d-none.d-xl-block.d-lg-block.d-md-block(style='background-image: url(assets/img/bg-photo-2.jpg)')
+        .login-info
+          h3 We make spectacular
+          p
+            | Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&apos;s standard dummy text ever since the 1500s.
+      .col-xl-4.col-lg-4.col-md-5.content-box.p-hdn
+        .content-form-box
+          h1.login-header Login
+          p Please enter your user name and password to login
+          form(method='post' action="/signup")
+            input(type='hidden', name='_csrf', value=_csrf)
+            .form-group
+              input.form-control(type='email' name='email' placeholder='Email Address')
+            .form-group
+              input.form-control(type='Password' name='password' placeholder='Password')
+            .form-group
+              .form-check.checkbox-theme
+                input#rememberMe.form-check-input(type='checkbox' value='')
+                label.form-check-label(for='rememberMe')
+                  | Keep Me Signed In
+            button.btn.btn-color.btn-md(type='submit') Login
+        .login-footer.clearfix
+          .pull-left
+            a(href='/')
+              img(src='assets/img/logos/black-logo.png' alt='logo')
+          .pull-right
+            p
+              | Don&apos;t have an account?
+              a(href='/signup')  Sign Up Now
+// Login page end
+// Full Page Search
+#full-page-search
+  button.close(type='button') &times;
+  form(action='#')
+    input(type='search' value='' placeholder='type keyword(s) here')
+    button.btn.btn-sm.btn-color(type='button') Search
+// External JS libraries
+script(src='assets/js/jquery-2.2.0.min.js')
+script(src='assets/js/popper.min.js')
+script(src='assets/js/bootstrap.min.js')
+script(src='assets/js/jquery.selectBox.js')
+script(src='assets/js/rangeslider.js')
+script(src='assets/js/jquery.magnific-popup.min.js')
+script(src='assets/js/jquery.filterizr.js')
+script(src='assets/js/wow.min.js')
+script(src='assets/js/backstretch.js')
+script(src='assets/js/jquery.countdown.js')
+script(src='assets/js/jquery.scrollUp.js')
+script(src='assets/js/particles.min.js')
+script(src='assets/js/typed.min.js')
+script(src='assets/js/dropzone.js')
+script(src='assets/js/jquery.mb.YTPlayer.js')
+script(src='assets/js/leaflet.js')
+script(src='assets/js/leaflet-providers.js')
+script(src='assets/js/leaflet.markercluster.js')
+script(src='assets/js/slick.min.js')
+script(src='assets/js/maps.js')
+script(src='assets/js/jquery.mCustomScrollbar.concat.min.js')
+script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyB0N5pbJN10Y1oYFRd0MJ_v2g8W2QT74JE')
+script(src='assets/js/ie-emulation-modes-warning.js')
+// Custom JS Script
+script(src='assets/js/app.js')
