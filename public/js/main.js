@@ -2,5 +2,7 @@
 $(document).ready(() => {
 
   // Place JavaScript code here...
-
+  $('#loginbtn').click(() => {
+    $('#loginBtn').submit(); 
+  });
 });
