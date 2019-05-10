@@ -1,0 +1,41 @@
+<% include ../partials/head %>
+<% include ../partials/header %>
+<!-- main header end -->
+<div class="page_loader"></div>
+
+<!-- Login page start -->
+<div class="login-page">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-8 col-lg-8 col-md-7 overview-bgi cnt-bg-photo cnt-bg-photo-2 d-none d-xl-block d-lg-block d-md-block" style="background-image: url(assets/img/bg-photo-2.jpg)">
+                <div class="login-info">
+                    <h3>We make spectacular</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-5 content-box p-hdn">
+                <div class="content-form-box">
+                    <h1 class="login-header">Login</h1>
+                    <p>Please enter the email you register with </p>
+                    <form action="/forgot" method="POST">
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" placeholder="Email Address">
+                        </div>
+                       
+                        <button type="submit" class="btn btn-color btn-md">Login</button>
+                    </form>
+                </div>
+                <div class="login-footer clearfix">
+                    <div class="pull-left">
+                        <a href="/"><img src="assets/img/logos/black-logo.png" alt="logo"></a>
+                    </div>
+                    <div class="pull-right">
+                        <p>Don't have an account?<a href="/signup"> Sign Up Now</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

@@ -1,0 +1,17 @@
+<% if(messages.errors){ %>
+ 
+   <% for (error in messages.errors){  %>
+    <div class="alert alert-danger">
+     <p> <%= error %></p>
+     
+    </div>
+    <%  } %>
+   <%  } %>
+   <% if(messages.success){ %>
+    
+     <%  for (success in messages.success){ %>
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <%= success %>
+   </div>
+   <%  } %>
+   <%} %>

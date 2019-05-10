@@ -1,0 +1,55 @@
+<% include ../partials/head %>
+<% include ../partials/header %>
+<!-- Register page start -->
+<br><br>
+<div class="register-page">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-4 col-md-5 cnt-bg-photo d-none d-xl-block d-lg-block d-md-block" style="background-image: url(assets/img/bg-photo-2.jpg)">
+              <div class="register-info">
+                  <a href="/">
+                      <img src="assets/img/logos/logo.png" alt="logo">
+                  </a>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has</p>
+              </div>
+          </div>
+          <div class="col-lg-8 col-md-7 col-sm-12 align-self-center">
+              <div class="content-form-box register-box">
+                  <div class="login-header"><h4>Create Your account</h4></div>
+                  <form action="/signup" method="POST">
+                      <div class="form-group">
+                          <input type="text" class="form-control" name="firstName" placeholder=" firsr Name">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" name="lasttName" placeholder=" Last Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" required class="form-control" name="phone" placeholder="phone">
+                    </div>
+                      <input type="hidden"  name="_csrf"  value="<%= _csrf %>">
+                      
+                      <div class="form-group">
+                          <input type="email" class="form-control" name="email" placeholder="Email Address">
+                      </div>
+                      <div class="form-group">
+                          <input type="Password" class="form-control" name="password" placeholder="Password">
+                      </div>
+                      <div class="form-group">
+                          <input type="Password" class="form-control" name="confirmPassword" placeholder="Confirm Password">
+                      </div>
+                      <div class="form-group">
+                          <button type="submit" class="btn btn-color btn-md btn-block">Create New Account</button>
+                      </div>
+                      <div class="login-footer text-center">
+                          <p>Already have an account?<a href="/login"> Sign In</a></p>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Register page end -->
+
+
+<% include ../partials/footer %>
