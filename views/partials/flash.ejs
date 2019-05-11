@@ -1,8 +1,8 @@
 <% if(messages.errors){ %>
- 
-   <% for (error in messages.errors){  %>
+ <% console.log(messages.errors,'console log')%>
+   <% for(error in messages.errors){  %>
     <div class="alert alert-danger">
-     <p> <%= error %></p>
+     <p> <%= messages.errors[error].msg %></p>
      
     </div>
     <%  } %>
@@ -11,7 +11,7 @@
     
      <%  for (success in messages.success){ %>
       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-      <%= success %>
+      <%= messages.success[success].msg %>
    </div>
    <%  } %>
    <%} %>
