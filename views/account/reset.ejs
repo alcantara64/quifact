@@ -17,3 +17,46 @@ block content
       button.btn.btn-primary.btn-reset(type='submit')
         i.far.fa-keyboard.fa-sm
         | Change Password
+        <% include ../partials/head %>
+        <% include ../partials/header %>
+        <!-- main header end -->
+        
+        <!-- Login page start -->
+        <div class="login-page">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-8 col-lg-8 col-md-7 overview-bgi cnt-bg-photo cnt-bg-photo-2 d-none d-xl-block d-lg-block d-md-block" style="background-image: url(assets/img/bg-photo-2.jpg)">
+                        <div class="login-info">
+                            <h3>We make spectacular</h3>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-5 content-box p-hdn">
+                        <div class="content-form-box">
+                            <h1 class="login-header">Reset Password</h1>
+                            <p>Enter your new New Password</p>
+                            <form id="loginBtn" action="/login" method="POST">
+                                <div class="form-group">
+                                    <input type="password" class="form-control" name="password" placeholder="Email Address">
+                                </div>
+                                <input type="hidden"  name="_csrf"  value="<%= _csrf %>">
+        
+                                <div class="form-group">
+                                    <input type="password" class="form-control" name="comfirmpassword" placeholder="Password">
+                                </div>
+                                
+                                <button id="loginbtn" type=" submit " class="btn btn-color btn-md">Submit</button>
+                            </form>
+                            
+                            <br/>
+                            
+                            <% include ../partials/flash %>
+                        </div>
+                       
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <% include ../partials/footer %>

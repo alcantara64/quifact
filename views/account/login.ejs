@@ -1,7 +1,6 @@
 <% include ../partials/head %>
 <% include ../partials/header %>
 <!-- main header end -->
-<div class="page_loader"></div>
 
 <!-- Login page start -->
 <div class="login-page">
@@ -21,7 +20,7 @@
                         <div class="form-group">
                             <input type="email" class="form-control" name="email" placeholder="Email Address">
                         </div>
-                        <input type="hidden"  name="_csrf" placeholder="Email Address" value="<%= _csrf %>">
+                        <input type="hidden"  name="_csrf"  value="<%= _csrf %>">
 
                         <div class="form-group">
                             <input type="Password" class="form-control" name="password" placeholder="Password">
@@ -36,7 +35,11 @@
                         </div>
                         <button id="loginbtn" type=" submit " class="btn btn-color btn-md">Login</button>
                     </form>
+                    
                     <br/>
+                    <div class="pull-left">
+                            <p>forgot password?<a href="/forgot">Reset Password</a></p>
+                        </div>
                     <% include ../partials/flash %>
                 </div>
                

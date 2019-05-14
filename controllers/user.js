@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 const passport = require('passport');
 const _ = require('lodash');
 const User = require('../models/User');
-
+const {sendComfirmEmail } = require('../lib/email') 
 
 const randomBytesAsync = promisify(crypto.randomBytes);
 
@@ -112,16 +112,22 @@ exports.postSignup = (req, res, next) => {
     password: req.body.password
   
   });
+  
 
   User.findOne({ email: req.body.email }, (err, existingUser) => {
     if (err) { return next(err); }
     if (existingUser) {
       req.flash('errors', { msg: 'Account with that email address already exists.' });
-      //return res.redirect('/signup');
+      return res.redirect('/signup');
       console.log(errors);
     }
+    user.setActivationToken()
+      console.log(user.setActivationToken(),'the activation token');
+     
     user.save((err) => {
       if (err) { return next(err); }
+      
+      sendComfirmEmail(user);
       req.logIn(user, (err) => {
         if (err) {
           return next(err);

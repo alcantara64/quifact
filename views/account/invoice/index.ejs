@@ -1,0 +1,84 @@
+<% include ../../partials/head %>
+<% include ../../partials/header %>
+<div class="sub-banner overview-bgi">
+    <div class="container">
+        <div class="breadcrumb-area">
+            <h1>My Invoice</h1>
+            <ul class="breadcrumbs">
+                <li><a href="/">Home</a></li>
+                <li class="active">My Invoice</li>
+            </ul>
+        </div>
+    </div>
+  </div>
+  <div class="user-page content-area-14">
+    <div class="container">
+        <div class="row">
+            <% include ../sidebar %>
+            <div class="col-lg-8 col-md-7 col-sm-12">
+                <div class="my-address contact-2 widget">
+                    <h3 class="heading">My Invoice</h3>
+                    <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">S/N</th>
+                            <th scope="col">Transaction id</th>
+                            <th width="50px" scope="col">Issuing Company</th>
+                            <th scope="col">Purchase Order</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">1</th>
+                            <td>135618590</td>
+                            <td>Versabit Technologies</td>
+                            <td>@mdo</td>
+                            <td><p class="text-success">active</p></td>
+                            <td>
+                                <div class="text-center">
+                                <button class="btn btn-info btn-xs">edit</button>
+                                <button class="btn btn-success btn-xs">view</button>
+                                </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">2</th>
+                            <td>234866789</td>
+                            <td>Thornton</td>
+                            <td>@fat</td>
+                            <td><p class="text-warning">pending</p></td>
+                            <td>
+                                    <div class="text-center">
+                                    <button class="btn btn-info btn-xs">edit</button>
+                                    <button class="btn btn-success btn-xs">view</button>
+                                    </div>
+                                </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">3</th>
+                            <td>098674536</td>
+                            <td>Versabit Technologies</td>
+                            <td>@twitter</td>
+                            <td><p class="text-danger">rejected</p></td>
+                            <td>
+                                    <div class="text-center">
+                                    <button class="btn btn-info btn-xs">edit</button>
+                                    <button class="btn btn-success btn-xs">view</button>
+                                    </div>
+                                </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    </div>
+        </div>
+    </div>
+  </div>
+  
+  
+  
+  
+<% include ../../partials/footer %>

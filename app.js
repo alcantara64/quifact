@@ -34,6 +34,7 @@ const homeController = require('./controllers/home');
 const userController = require('./controllers/user');
 const apiController = require('./controllers/api');
 const contactController = require('./controllers/contact');
+const invoiceController = require('./controllers/invoice')
 
 /**
  * API keys and Passport configuration.
@@ -116,7 +117,7 @@ app.use((req, res, next) => {
   }
   next();
 });
-app.use('/', express.static(path.join(__dirname, 'public'), { maxAge: 31557600000 }));
+app.use('/', express.static(path.join(__dirname, './public'), { maxAge: 31557600000 }));
 app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/chart.js/dist'), { maxAge: 31557600000 }));
 app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/popper.js/dist/umd'), { maxAge: 31557600000 }));
 app.use('/js/lib', express.static(path.join(__dirname, 'node_modules/bootstrap/dist/js'), { maxAge: 31557600000 }));
@@ -133,7 +134,11 @@ app.get('/faq', homeController.faq);
 app.get('/login', userController.getLogin);
 app.post('/login', userController.postLogin);
 app.get('/logout', userController.logout);
-app.get('/invoice', userController.invoice);
+app.get('/invoice', invoiceController.getInvoice);
+
+app.get('/invoice/create', passportConfig.isAuthenticated, invoiceController.createInvoice);
+app.post('/invoice',passportConfig.isAuthenticated, invoiceController.postInvice);
+
 app.get('/forgot', userController.getForgot);
 app.post('/forgot', userController.postForgot);
 app.get('/reset/:token', userController.getReset);
@@ -150,6 +155,7 @@ app.get('/account/unlink/:provider', passportConfig.isAuthenticated, userControl
 app.get('/faq', homeController.faq);
 app.get('/about', homeController.about);
 
+app.get('/admin',passportConfig.isAuthenticated,)
 /**
  * API examples routes.
  */

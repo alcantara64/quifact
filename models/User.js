@@ -1,14 +1,14 @@
 const bcrypt = require('bcrypt');
 const crypto = require('crypto');
 const mongoose = require('mongoose');
-
+const jwt = require('jsonwebtoken')
 const userSchema = new mongoose.Schema({
   email: { type: String, unique: true },
   password: String,
   passwordResetToken: String,
   passwordResetExpires: Date,
-  
-  
+  activationToken: { type: String, default: "" },
+  comfirmed :{type:Boolean, default : false},
   snapchat: String,
   facebook: String,
   twitter: String,
@@ -70,7 +70,22 @@ userSchema.methods.gravatar = function gravatar(size) {
 };
 
 
-
+userSchema.methods.setActivationToken = function(){
+ this.activationToken = this.getJWT();
+ 
+}
+userSchema.methods.getComfirmationLink = ()=>{
+  return `${process.env.BASE_URL}/comfirmation/${this.activationToken}`
+  }
+userSchema.methods.getJWT = function(){
+  return jwt.sign(
+    {
+      email: this.email,
+      confirmed: this.confirmed
+    },
+    'my secret'
+  );
+};
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
