@@ -11,14 +11,14 @@
         </div>
     </div>
 </div>
-<div class="user-page submit-property content-area-7">
+<div class="user-page content-area-7">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
               <div class="search-area contact-2"><a href="/invoice">
                     </a><div class="search-area-inner"><a href="">
                         </a><div class="search-contents "><a href="/invoice">
-                            </a><form method="POST">
+                            </a><form  action="/invoice" method="POST">
                                 <h3 class="heading">Invoice Details</h3>
                                 <div class="row mb-50">
                                     <div class="col-lg-4 col-md-6">
@@ -30,7 +30,7 @@
                                     <div class="col-lg-4 col-md-6">
                                         <div class="form-group">
                                             <label>Registration Number</label>
-                                            <input type="text" name="RC-Number" class="form-control" placeholder="RC Number">
+                                            <input type="text" name="regNumber" class="form-control" placeholder="RC Number">
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6">
@@ -48,14 +48,14 @@
                                     <div class="col-lg-4 col-md-6">
                                         <div class="form-group">
                                             <label>Invoice Date</label>
-                                            <input type="text" name="date" class="form-control" placeholder="Invoice Date">
+                                            <input type="date" name="dateIssued" class="form-control" placeholder="Invoice Date">
  
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-6">
                                         <div class="form-group">
                                                 <label>Amount in words</label>
-                                                <input type="text" name="date" class="form-control" placeholder="Amount">
+                                                <input type="number" name="amountInwords" class="form-control" placeholder="Amount">
      
                                            
                                         </div>
@@ -66,7 +66,7 @@
                                 <div class="row mb-60">
                                     <div class="col-lg-12">
                                         <div id="myDropZone" class="dropzone dropzone-design dz-clickable">
-                                            <div class="dz-default dz-message"><span>Drop files here to upload PDF, JPG, JPEG only</span></div>
+                                            <div class="dz-default dz-message"><span><input type="file" hidden/>Drop files here to upload PDF, JPG, JPEG only</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -79,15 +79,15 @@
                                             <input type="text" name="issuerAddress" class="form-control" placeholder="Address">
                                         </div>
                                     </div>
-                                    
+                                    <input type="hidden"  name="_csrf"  value="<%= _csrf %>">
                                     <div class="col-lg-6 col-md-6">
                                         <div class="form-group">
                                             <label>Contact person</label>
-                                            <input type="text" name="contactPerson" class="form-control" placeholder="contact Person">
+                                            <input type="text" name="issuerContactPerson" class="form-control" placeholder="contact Person">
                                         </div>
                                     </div>
                                 </div>
-
+                                <input type="hidden"  name="_csrf"  value="<%= _csrf %>">
                                 <h3 class="heading">Invoice Details</h3>
                                 <div class="row mb-50">
                                     <div class="col-lg-12">
@@ -102,7 +102,7 @@
                                 
 
                                     <div class="col-lg-12"><a href="">
-                                        </a><a href="#" class="btn btn-md btn-color">Preview and Submit</a>
+                                        </a><button type="submit"  class="btn btn-md btn-color">Preview and Submit</button>
                                     </div>
                                 </form></div>
                             
@@ -114,5 +114,6 @@
         </div>
     </div>
 
+<% include ../../partials/flash %>
 
 <% include ../../partials/footer %>

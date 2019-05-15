@@ -90,7 +90,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
 app.use((req, res, next) => {
-  if (req.path === '/api/upload') {
+  if (req.path === '/invoice') {
     next();
   } else {
     lusca.csrf()(req, res, next);
@@ -137,12 +137,13 @@ app.get('/logout', userController.logout);
 app.get('/invoice', invoiceController.getInvoice);
 
 app.get('/invoice/create', passportConfig.isAuthenticated, invoiceController.createInvoice);
-app.post('/invoice',passportConfig.isAuthenticated, invoiceController.postInvice);
+app.post('/invoice',passportConfig.isAuthenticated, invoiceController.postInvoice);
 
 app.get('/forgot', userController.getForgot);
 app.post('/forgot', userController.postForgot);
 app.get('/reset/:token', userController.getReset);
 app.post('/reset/:token', userController.postReset);
+app.get('/comfirmation/:token',userController.comfirmEmail)
 app.get('/signup', userController.getSignup);
 app.post('/signup', userController.postSignup);
 app.get('/contact', contactController.getContact);
@@ -156,6 +157,8 @@ app.get('/faq', homeController.faq);
 app.get('/about', homeController.about);
 
 app.get('/admin',passportConfig.isAuthenticated,)
+
+
 /**
  * API examples routes.
  */

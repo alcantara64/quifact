@@ -5,6 +5,8 @@ const InvoiceSchema =  new mongoose.Schema({
     transactionId : String,
     companyName : String,
     issuingCompany:String,
+    issuerContactPerson: String,
+    issuerAddress : String,
     value: String,
     registrationNumber : Number,
     address : String,
@@ -13,6 +15,7 @@ const InvoiceSchema =  new mongoose.Schema({
     bidding : [{
        type:mongoose.Schema.Types.ObjectId, ref:'Bidding'
     } ],
+    invoiceDetails:String,
     dateIssued:Date,
     purchaseOrder:String,
     imageUrl:String,

@@ -5,6 +5,7 @@ const passport = require('passport');
 const _ = require('lodash');
 const User = require('../models/User');
 const {sendComfirmEmail } = require('../lib/email') 
+const jwt = require('jsonwebtoken')
 
 const randomBytesAsync = promisify(crypto.randomBytes);
 
@@ -380,6 +381,16 @@ exports.getForgot = (req, res) => {
  * POST /forgot
  * Create a random token, then the send user an email with a reset link.
  */
+exports.comfirmEmail =(req,res,next) =>{
+if(req.params.token ){
+  console.log(req.params.token);
+
+}
+req.flash('success',{msg:'your email was succesfully verified'})
+return res.redirect('/account')
+
+}
+
 exports.postForgot = (req, res, next) => {
   req.assert('email', 'Please enter a valid email address.').isEmail();
   req.sanitize('email').normalizeEmail({ gmail_remove_dots: false });
