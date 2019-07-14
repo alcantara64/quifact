@@ -137,7 +137,6 @@ app.get('/logout', userController.logout);
 app.get('/invoice', invoiceController.getInvoice);
 
 app.get('/invoice/create', passportConfig.isAuthenticated, invoiceController.createInvoice);
-app.post('/invoice',passportConfig.isAuthenticated, invoiceController.postInvoice);
 
 app.get('/forgot', userController.getForgot);
 app.post('/forgot', userController.postForgot);
